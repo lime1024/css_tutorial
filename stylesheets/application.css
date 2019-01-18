@@ -1,0 +1,793 @@
+/** * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/) * http://cssreset.com */
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* ここにCSSを書いてデザインを入れよう */
+
+/* memo: normal 1.6, h1 4.8, h2 3.2, h3 2.6, h4 2.2, h5 2 */
+
+/* html全体のfont-sizeを10pxに指定、全体の横幅も指定 */
+
+html {
+  font-size: 62.5%;
+}
+
+/* bodyのfont-sizeを指定する */
+
+body {
+  font-size: 1.6rem;
+}
+
+/* headerのテキストを中心において、背景の色を変更 */
+
+header {
+  text-align: center;
+  background-color: #8E8E8E;
+}
+
+/* h1の文字サイズと上下の余白を指定 */
+
+h1 {
+  font-size: 4.8rem;
+  font-weight: bold;
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+  text-shadow: 0 .1rem #fff;
+}
+
+/* global-nav を flexbox で均一に横方向に並べる */
+
+.global-nav__items {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+/* ナビゲーションを横並びにし、余白を指定 */
+
+.global-nav__item {
+  padding: 2rem 3.3rem;
+  width: 20%;
+  text-align: center;
+}
+
+/* ナビゲーションの色を交互にする */
+
+.global-nav__item:nth-child(2n) {
+  background-color: #aaaaaa;
+}
+
+.global-nav__item:nth-child(2n+1) {
+  background-color: #cecece;
+}
+
+/* ナビゲーションのリンクの下線を消して、文字を太くする */
+
+.global-nav__item a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #444
+}
+
+/* パンくずリストを横に並べる */
+
+.bread-crumbs__items {
+  display: flex;
+  border-top: 0.2rem solid #404040;
+  border-bottom: 0.2rem solid #404040;
+}
+
+.bread-crumbs__item {
+  padding-top: .8rem;
+  padding-bottom: .8rem;
+  padding-left: 1rem;
+  color: white;
+}
+
+/* パンくずリストのリンクの下線を消して文字サイズを変更する*/
+
+.bread-crumbs__item a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+}
+
+/* パンくずリストを>で並べる */
+
+.bread-crumbs__items li:after {
+  content: '>';
+  color: #cecece;
+  padding-left: 1rem;
+}
+
+/* パンくずリストを>で並べるけど最後からは消す */
+
+.bread-crumbs__items li:last-child:after {
+  content: '';
+}
+
+.top-ads {
+  background-color: #cecece;
+}
+
+/* 広告を並べる */
+
+.top-ads__items {
+  display: flex;
+  justify-content: space-around;
+  padding: 0 1rem;
+}
+
+.top-ads__item {
+  flex: 1;
+}
+
+/* 広告表示サイズを変更する */
+
+.top-ads__item img {
+  max-width: 100%;
+  padding: 1rem 1rem;
+  background-color: #cecece;
+}
+
+/* main を右 aside を左に指定 */
+
+.body {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+}
+
+.aside {
+  max-width: 34%;
+}
+
+.main {
+  max-width: 66%;
+}
+
+/* 横の広告サイズを調整する */
+
+.aside-ads__item img {
+  max-width: 100%;
+  border-top: solid .5rem #666;
+  border-right: solid 1.6rem #666;
+  border-bottom: solid .5rem #666;
+  border-left: solid 1.6rem #666;
+}
+
+.aside-ads__items {
+  border-top: solid 1.1rem #666;
+  border-bottom: solid 1.1rem #666;
+}
+
+/* main-headerの背景を変更 */
+
+.main-header__title {
+  background-color: #EBEBEC;
+  position: relative;
+  padding-left: 6rem;
+}
+
+/* ページタイトルの装飾 */
+
+.main-header__title:before, .main-header__title:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+
+.main-header__title:before {
+  left: 1rem;
+  top: 3.4rem;
+  border-right: solid 1.5rem #8E8E8E;
+  background-color: #404040;
+}
+
+.main-header__title:after {
+  left: 1rem;
+  top: 2rem;
+  border-right: solid 1.5rem #404040;
+  background-color: #8E8E8E;
+}
+
+/* ページタイトルの右上の装飾 */
+.main-header {
+  position: relative;
+}
+
+.main-header:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 32px;
+  height: 32px;
+  left: 61.5rem;
+  top: 0;
+  background-color: #A0A0A0;
+}
+
+.main-header:before {
+  content: "";
+  z-index: 1;
+  position: absolute;
+  display: block;
+  width: 45px;
+  height: 45px;
+  transform: rotate(45deg);
+  border-color: #BCBCBC;
+  left: 62.5rem;
+  top: -2.2rem;
+  background-color: #cecece;
+}
+
+/* 記事タイトルの装飾 */
+
+.article {
+  position: relative;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.article__title:before, .article__title:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 8px;
+  height: 14px;
+}
+
+.article__title:before {
+  left: 2rem;
+  top: 3.4rem;
+  background-color: #404040;
+}
+
+.article__title:after {
+  left: 2rem;
+  top: 2rem;
+  background-color: #8E8E8E;
+}
+
+/* 記事見出しの装飾 */
+
+.article__sub-title {
+  position: relative;
+  padding-left: 4rem;
+}
+
+.article__sub-title:before, .article__sub-title:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 5px;
+  height: 18px;
+}
+
+.article__sub-title:before {
+  left: 1rem;
+  top: 2.5rem;
+  background-color: #404040;
+}
+
+.article__sub-title:after {
+  left: 1.5rem;
+  top: 2.5rem;
+  background-color: #D8D8D8;
+}
+
+/* 三角を作る */
+
+.article__sub-title:after {
+  border-top: solid 7px transparent;
+  border-bottom: solid 7px transparent;
+  border-left: solid 10px #404040;
+  content: "";
+  display: block;
+  height: 0;
+  top: 26px;
+  position: absolute;
+  width: 0;
+  left: 22px;
+}
+
+/* mainのh2のサイズを変更する */
+
+h2 {
+  font-size: 3.2rem;
+  font-weight: bold;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 2rem;
+  text-align: left;
+}
+
+/* h3のサイズを変更する */
+
+h3 {
+  font-size: 2.6rem;
+  font-weight: bold;
+  padding-top: 2rem;
+  padding-left: 2rem;
+  text-align: left;
+}
+
+/* 行間の調整と背景色の指定 */
+
+article {
+  line-height: 2.8rem;
+  background-color: #D8D8D8;
+}
+
+/* 記事の体裁の調整 */
+
+article p {
+  padding-top: 2rem;
+}
+
+/* 文字の種類による強調をつける */
+
+.article__strong {
+  font-weight: bold;
+}
+
+/* h4のサイズを変更する */
+
+h4 {
+  font-size: 2.2rem;
+  font-weight: bold;
+  padding-top: 2rem;
+  text-align: left;
+}
+
+.article__unorder-list {
+  padding-top: 2rem;
+  padding-right: 1.7rem;
+  padding-left: 1.7rem;
+}
+
+/* 番号なしリストに・をつける */
+.article__unorder-list {
+  list-style-type: disc;
+}
+
+/* からあげのサイズ調整 */
+
+.article img {
+  width: 90%;
+  display: block;
+  margin: 0 auto;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* h5のサイズを変更する */
+
+h5 {
+  font-size: 2rem;
+  font-weight: bold;
+  padding-top: 2rem;
+  padding-left: 2rem;
+  text-align: left;
+}
+
+
+.article__order-list {
+  padding-top: 2rem;
+  padding-right: 1.7rem;
+  padding-left: 1.7rem;
+  padding-bottom: 2rem;
+}
+
+/* 引用符をつける */
+.article__blockquote {
+  position: relative;
+  padding-left: 5rem;
+  padding-top: 5rem;
+}
+
+.article__blockquote:before {
+  content: "\22";
+  z-index: 1;
+  position: absolute;
+  display: block;
+  color: white;
+  font-size: 5rem;
+  width: 10px;
+  height: 500px;
+  left: 2.6rem;
+  top: 4.5rem;
+  background-color: #9d9d9d;
+}
+
+.article__blockquote:after {
+  content: "";
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  left: 1rem;
+  top: 2.5rem;
+  background-color: #9d9d9d;
+}
+
+
+/* 小見出しの装飾 */
+.article__sub-sub-title {
+position: relative;
+padding-left: 5rem;
+}
+
+.article__sub-sub-title:before, .article__sub-sub-title:after {
+  content: "";
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  width: 14px;
+  height: 14px;
+}
+
+.article__sub-sub-title:before {
+  left: 2rem;
+  top: 2.8rem;
+  background-color: #404040;
+}
+
+.article__sub-sub-title:after {
+  left: 3rem;
+  top: 2.8rem;
+  background-color: #8E8E8E;
+}
+
+/* 番号ありリストの番号づけ */
+.article__order-list {
+  list-style-type: decimal;
+}
+
+
+/* お問い合わせフォームのアイコンを作成 */
+.form__title {
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+
+.form__title:before {
+  content: "";
+  display: block;
+  border: solid 2px black;
+  width: 36px;
+  height: 24px;
+  position: absolute;
+  left: 2rem;
+  top: 6.8rem;
+}
+
+.form__title:after {
+  content: "";
+  display: block;
+  border: solid 2px black;
+  width: 36px;
+  height: 36px;
+  position: absolute;
+  left: 2rem;
+  top: 4rem;
+  transform: rotate(45deg);
+}
+
+.form:after {
+  content: "";
+  display: block;
+  width: 90px;
+  height: 60px;
+  background-color: white;
+  position: absolute;
+  left: 0;
+  top: .8rem;
+}
+
+/* お問い合わせフォームの背景を指定 */
+
+.form {
+  background-color: white;
+  text-align: right;
+  padding: 50px;
+  position: relative;
+}
+
+/* h3下と一番したの余白を指定 */
+
+.form h3 {
+  padding-bottom: 2rem;
+}
+
+/* label全体の文字を指定 */
+
+label {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+/* フォーム各項目の右側に余白を指定 */
+
+.form-item__label {
+  padding-right: 2rem;
+  flex: 0 0 161px;
+  text-align: right;
+}
+
+/* form内の余白を指定 */
+
+.form-item {
+  padding-top: 1rem;
+  padding-right: 2rem;
+  padding-bottom: 1rem;
+  padding-left: 2rem;
+  display: flex;
+}
+
+/* formの1行テキストのサイズを指定 */
+
+.form-item__text-input {
+  width: 35rem;
+  padding: .5rem 1rem .5rem 1rem;
+  border-radius: .5rem;
+  border: .1rem solid #C9C8C9;
+}
+
+/* formのテキストエリアのサイズを指定 */
+
+.form-item__textarea {
+  width: 35rem;
+  height: 30rem;
+  padding: .5rem 1rem .5rem 1rem;
+  border-radius: .5rem;
+  border: .1rem solid #C9C8C9;
+}
+
+/* ボタンとボックスをインライン要素にして横並び・見た目を整える */
+
+.form-item__inline-items li {
+  display: inline;
+  padding: .8rem 1rem .8rem 1rem;
+  border-radius: .5rem;
+  border: .1rem solid #C9C8C9;
+  margin-right: 1.5rem;
+  background-color: #EBEBEC;
+}
+
+/* セレクトの文字サイズを大きくする */
+
+.form-item option {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+/* プルダウンエリアのサイズを指定 */
+
+.form-item__select-pull-down {
+  width: 35rem;
+  padding: 1rem 1rem 1rem 1rem;
+  border-radius: .5rem;
+  border: .1rem solid #C9C8C9;
+  background-color: #EBEBEC;
+}
+
+/* セレクトリストのサイズを指定 */
+
+.form-item__select-list {
+  width: 35rem;
+  padding: .5rem 1rem .5rem 1rem;
+  border-radius: .5rem;
+  border: .1rem solid #C9C8C9;
+  background-color: #EBEBEC;
+}
+
+.form-item__select-list-option {
+  padding: 0.5rem 0;
+}
+
+/* ファイル選択のサイズ指定 */
+
+.form-item__file {
+  width: 35rem;
+  padding: .5rem 1rem .5rem 1rem;
+  border-radius: .5rem;
+  border: .1rem solid #C9C8C9;
+  background-color: #EBEBEC;
+}
+
+/* ボタンのサイズ、色、形を指定 */
+
+.form-item__actions-items {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.form-item__action.is-submit {
+  padding: 1rem 5rem 1rem 5rem;
+  border-radius: .5rem;
+  text-align: center;
+  background-color: #3C3C3C;
+  font-size: 1.4rem;
+  color: white;
+}
+
+.form-item__action.is-reset {
+  padding: 1rem 5rem 1rem 5rem;
+  border-radius: .5rem;
+  text-align: center;
+  margin-left: 2rem;
+  background-color: #C5C5C5;
+  font-size: 1.4rem;
+}
+
+/* ローカルナビの体裁を整える */
+.local-nav {
+  background-color: #9d9d9d;
+  margin-left: 1.7rem;
+  width: 30rem;
+  height: 10rem;
+  overflow: scroll;
+  border-radius: .5rem;
+}
+
+.local-nav__item {
+  line-height: 2rem;
+  border-bottom: .2rem solid #5a5a5a;
+  padding: .3rem 0;
+}
+
+.local-nav a{
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.2rem;
+  padding-left: 2rem;
+}
+
+
+/* footer の nav と about を左右に並べる */
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #3C3C3C;
+  font-size: 1.4rem;
+  padding: 0 2rem;
+}
+
+/* fotter-navのサイズと文字色を指定 */
+
+.footer-nav {
+  display: flex;
+  flex-basis: 50%;
+  color: white;
+  padding: 3rem 1rem 3rem 1rem;
+}
+
+.footer-nav__item {
+  padding-bottom: 1.5rem;
+}
+
+/* footerナビを>で並べる */
+
+.footer li:before {
+  content: '>';
+  color: #cecece;
+  padding-right: .8rem;
+  padding-left: 4rem;
+}
+
+/* footerリンクの下線を消して文字サイズを変更する*/
+
+.footer a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.4rem;
+}
+
+.about-author {
+  flex-basis: 50%;
+  background-color: #C5C5C5;
+  border-radius: .5rem;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.about-author h2 {
+  flex-basis: 100%;
+  font-size: 1.4rem;
+}
+
+.about-author__image {
+  flex-basis: 20%;
+  border-radius: 50%;
+  width: 5%;
+  margin-left: 1.5rem;
+}
+
+.about-author__descriptions {
+  flex-basis: 70%;
+  margin-right: 1.5rem;
+  margin-left: 1.5rem;
+  margin-bottom: 2rem;
+  line-height: 2.8rem;
+}
+
+.about-author__term {
+  text-align: right;
+  float: left;
+}
+
+.about-author__description {
+  margin-left: 7rem;
+}
+
+.footer-copyright {
+  flex-basis: 100%;
+  text-align: center;
+  color: white;
+  margin-bottom: 2rem;
+}
+
+/* boxの高さ、幅に border-width と padding を含める */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: #444;
+  background-color: #aaa;
+}
+
+/* 全体を真ん中に配置 */
+
+.container {
+  width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #666;
+  box-shadow: rgba(0, 0, 0, .4) 0 0 8px;
+  overflow: hidden; // floatを使った場合の対策
+}
